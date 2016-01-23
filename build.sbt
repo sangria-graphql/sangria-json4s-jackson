@@ -1,6 +1,6 @@
 name := "sangria-json4s-jackson"
 organization := "org.sangria-graphql"
-version := "0.1.0-SNAPSHOT"
+version := "0.1.0"
 
 description := "Sangria json4s-jackson marshalling"
 homepage := Some(url("http://sangria-graphql.org"))
@@ -10,14 +10,13 @@ scalaVersion := "2.11.7"
 scalacOptions ++= Seq("-deprecation", "-feature")
 
 libraryDependencies ++= Seq(
-  "org.sangria-graphql" %% "sangria-marshalling-api" % "0.1.0-SNAPSHOT",
+  "org.sangria-graphql" %% "sangria-marshalling-api" % "0.1.0",
   "org.json4s" %% "json4s-jackson" % "3.3.0",
 
-  "org.sangria-graphql" %% "sangria-marshalling-testkit" % "0.1.0-SNAPSHOT" % "test",
+  "org.sangria-graphql" %% "sangria-marshalling-testkit" % "0.1.0" % "test",
   "org.scalatest" %% "scalatest" % "2.2.4" % "test"
 )
 
-resolvers += "Sonatype snapshots" at "https://oss.sonatype.org/content/repositories/snapshots/"
 git.remoteRepo := "git@github.com:sangria-graphql/sangria-json4s-jackson.git"
 
 // Publishing
