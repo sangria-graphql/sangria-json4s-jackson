@@ -7,12 +7,21 @@ import sangria.marshalling.testkit._
 
 import org.json4s.JsonAST._
 
-class Json4sJacksonSupportSpec extends WordSpec with Matchers with MarshallingBehaviour with InputHandlingBehaviour {
+class Json4sJacksonSupportSpec extends WordSpec with Matchers with MarshallingBehaviour with InputHandlingBehaviour with ParsingBehaviour {
   "Json4s native integration" should {
     behave like `value (un)marshaller` (Json4sJacksonResultMarshaller)
 
     behave like `AST-based input unmarshaller` (json4sJacksonFromInput[JValue])
     behave like `AST-based input marshaller` (Json4sJacksonResultMarshaller)
+
+    behave like `input parser` (ParseTestSubjects(
+      complex = """{"a": [null, 123, [{"foo": "bar"}]], "b": {"c": true, "d": null}}""",
+      simpleString = "\"bar\"",
+      simpleInt = "12345",
+      simpleNull = "null",
+      list = "[\"bar\", 1, null, true, [1, 2, 3]]",
+      syntaxError = List("[123, \"FOO\" \"BAR\"")
+    ))
   }
 
   val toRender = JObject(

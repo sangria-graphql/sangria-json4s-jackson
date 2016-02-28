@@ -1,8 +1,10 @@
 package sangria.marshalling.json4s
 
-import org.json4s.jackson.JsonMethods.{render ⇒ jsonRender, pretty, compact}
+import org.json4s.jackson.JsonMethods.{render ⇒ jsonRender, pretty, compact, parse ⇒ parseJson}
 import org.json4s.JsonAST._
 import sangria.marshalling._
+
+import scala.util.Try
 
 object jackson extends Json4sJacksonSupportLowPrioImplicits {
   implicit object Json4sJacksonResultMarshaller extends ResultMarshaller {
@@ -86,6 +88,10 @@ object jackson extends Json4sJacksonSupportLowPrioImplicits {
 
   implicit def json4sJacksonFromInput[T <: JValue]: FromInput[T] =
     Json4sJacksonFromInput.asInstanceOf[FromInput[T]]
+
+  implicit object Json4sJacksonInputParser extends InputParser[JValue] {
+    def parse(str: String) = Try(parseJson(str, useBigDecimalForDouble = true, useBigIntForLong = true))
+  }
 }
 
 trait Json4sJacksonSupportLowPrioImplicits {
