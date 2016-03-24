@@ -9,11 +9,13 @@ import scala.util.Try
 object jackson extends Json4sJacksonSupportLowPrioImplicits {
   implicit object Json4sJacksonResultMarshaller extends ResultMarshaller {
     type Node = JValue
+    type MapBuilder = ArrayMapBuilder[Node]
 
-    def emptyMapNode = JObject(Nil)
+    def emptyMapNode(keys: Seq[String]) = new ArrayMapBuilder[Node](keys)
+    def addMapNodeElem(builder: MapBuilder, key: String, value: Node, optional: Boolean) = builder.add(key, value)
+
+    def mapNode(builder: MapBuilder) = JObject(builder.toList)
     def mapNode(keyValues: Seq[(String, JValue)]) = JObject(keyValues.toList)
-    def addMapNodeElem(node: JValue, key: String, value: JValue, optional: Boolean) =
-      JObject(node.asInstanceOf[JObject].obj :+ (key → value))
 
     def arrayNode(values: Vector[JValue]) = JArray(values.toList)
     def optionalArrayNodeValue(value: Option[JValue]) = value match {
