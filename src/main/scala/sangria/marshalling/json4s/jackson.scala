@@ -23,12 +23,19 @@ object jackson extends Json4sJacksonSupportLowPrioImplicits {
       case None ⇒ nullNode
     }
 
-    def stringNode(value: String) = JString(value)
-    def floatNode(value: Double) = JDouble(value)
-    def booleanNode(value: Boolean) = JBool(value)
-    def intNode(value: Int) = JInt(value)
-    def bigIntNode(value: BigInt) = JInt(value)
-    def bigDecimalNode(value: BigDecimal) = JDecimal(value)
+    def scalarNode(value: Any, typeName: String, info: Set[ScalarValueInfo]) = value match {
+      case v: String ⇒ JString(v)
+      case v: Boolean ⇒ JBool(v)
+      case v: Int ⇒ JInt(v)
+      case v: Long ⇒ JLong(v)
+      case v: Float ⇒ JDouble(v)
+      case v: Double ⇒ JDouble(v)
+      case v: BigInt ⇒ JInt(v)
+      case v: BigDecimal ⇒ JDecimal(v)
+      case v ⇒ throw new IllegalArgumentException("Unsupported scalar value: " + v)
+    }
+
+    def enumNode(value: String, typeName: String) = JString(value)
 
     def nullNode = JNull
 

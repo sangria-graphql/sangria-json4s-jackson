@@ -1,6 +1,6 @@
 name := "sangria-json4s-jackson"
 organization := "org.sangria-graphql"
-version := "0.3.1-SNAPSHOT"
+version := "0.3.1"
 
 description := "Sangria json4s-jackson marshalling"
 homepage := Some(url("http://sangria-graphql.org"))
@@ -10,10 +10,10 @@ scalaVersion := "2.11.8"
 scalacOptions ++= Seq("-deprecation", "-feature")
 
 libraryDependencies ++= Seq(
-  "org.sangria-graphql" %% "sangria-marshalling-api" % "0.2.0",
+  "org.sangria-graphql" %% "sangria-marshalling-api" % "0.2.1",
   "org.json4s" %% "json4s-jackson" % "3.3.0",
 
-  "org.sangria-graphql" %% "sangria-marshalling-testkit" % "0.2.0" % "test",
+  "org.sangria-graphql" %% "sangria-marshalling-testkit" % "0.2.1" % "test",
   "org.scalatest" %% "scalatest" % "2.2.6" % "test"
 )
 
