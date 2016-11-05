@@ -1,3 +1,9 @@
+## v0.3.2 (2016-11-05)
+
+* Updated json4s to version 3.5.0
+* Cross-compile for scala 2.11 and 2.12
+* Updated dependencies
+
 ## v0.3.1 (2016-05-01)
 
 * Updated to sangria-marshalling-api v0.2.1
