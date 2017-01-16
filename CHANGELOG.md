@@ -1,3 +1,7 @@
+## v1.0.0 (2017-01-16)
+
+* 1.0 Release
+
 ## v0.3.2 (2016-11-05)
 
 * Updated json4s to version 3.5.0

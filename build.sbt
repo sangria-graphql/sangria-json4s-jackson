@@ -1,13 +1,13 @@
 name := "sangria-json4s-jackson"
 organization := "org.sangria-graphql"
-version := "0.3.3-SNAPSHOT"
+version := "1.0.0"
 
 description := "Sangria json4s-jackson marshalling"
 homepage := Some(url("http://sangria-graphql.org"))
 licenses := Seq("Apache License, ASL Version 2.0" -> url("http://www.apache.org/licenses/LICENSE-2.0"))
 
-scalaVersion := "2.12.0"
-crossScalaVersions := Seq("2.11.8", "2.12.0")
+scalaVersion := "2.12.1"
+crossScalaVersions := Seq("2.11.8", "2.12.1")
 
 scalacOptions ++= Seq("-deprecation", "-feature")
 
@@ -19,11 +19,11 @@ scalacOptions ++= {
 }
 
 libraryDependencies ++= Seq(
-  "org.sangria-graphql" %% "sangria-marshalling-api" % "0.2.2",
+  "org.sangria-graphql" %% "sangria-marshalling-api" % "1.0.0",
   "org.json4s" %% "json4s-jackson" % "3.5.0",
 
-  "org.sangria-graphql" %% "sangria-marshalling-testkit" % "0.2.3" % "test",
-  "org.scalatest" %% "scalatest" % "3.0.0" % "test"
+  "org.sangria-graphql" %% "sangria-marshalling-testkit" % "1.0.0" % "test",
+  "org.scalatest" %% "scalatest" % "3.0.1" % "test"
 )
 
 git.remoteRepo := "git@github.com:sangria-graphql/sangria-json4s-jackson.git"
