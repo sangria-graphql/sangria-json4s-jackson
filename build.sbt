@@ -23,11 +23,11 @@ libraryDependencies ++= Seq(
   "org.sangria-graphql" %% "sangria-marshalling-api" % "1.0.4",
   "org.json4s" %% "json4s-jackson" % "3.5.5",
 
-  "org.sangria-graphql" %% "sangria-marshalling-testkit" % "1.0.2" % "test",
-  "org.scalatest" %% "scalatest" % "3.0.8" % "test"
+  "org.sangria-graphql" %% "sangria-marshalling-testkit" % "1.0.2" % Test,
+  "org.scalatest" %% "scalatest" % "3.0.8" % Test
 )
 
-git.remoteRepo := "git@github.com:sangria-graphql/sangria-json4s-jackson.git"
+git.remoteRepo := "git@github.com:sangria-graphql-org/sangria-json4s-jackson.git"
 
 // Publishing
 
@@ -58,6 +58,6 @@ startYear := Some(2016)
 organizationHomepage := Some(url("https://github.com/sangria-graphql"))
 developers := Developer("OlegIlyenko", "Oleg Ilyenko", "", url("https://github.com/OlegIlyenko")) :: Nil
 scmInfo := Some(ScmInfo(
-  browseUrl = url("https://github.com/sangria-graphql/sangria-json4s-jackson.git"),
-  connection = "scm:git:git@github.com:sangria-graphql/sangria-json4s-jackson.git"
+  browseUrl = url("https://github.com/sangria-graphql-org/sangria-json4s-jackson.git"),
+  connection = "scm:git:git@github.com:sangria-graphql-org/sangria-json4s-jackson.git"
 ))
