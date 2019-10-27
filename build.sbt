@@ -1,6 +1,7 @@
 name := "sangria-json4s-jackson"
 organization := "org.sangria-graphql"
 version := "1.0.1-SNAPSHOT"
+mimaPreviousArtifacts := Set("org.sangria-graphql" %% "sangria-json4s-jackson" % "1.0.0")
 
 description := "Sangria json4s-jackson marshalling"
 homepage := Some(url("http://sangria-graphql.org"))
@@ -41,9 +42,9 @@ publishTo := Some(
 
 // Site and docs
 
-site.settings
-site.includeScaladoc()
-ghpages.settings
+enablePlugins(SiteScaladocPlugin)
+enablePlugins(GhpagesPlugin)
+git.remoteRepo := "git@github.com:org.sangria-graphql-org/sangria-play-json.git"
 
 // nice *magenta* prompt!
 
