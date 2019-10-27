@@ -27,8 +27,6 @@ libraryDependencies ++= Seq(
   "org.scalatest" %% "scalatest" % "3.0.8" % Test
 )
 
-git.remoteRepo := "git@github.com:sangria-graphql-org/sangria-json4s-jackson.git"
-
 // Publishing
 
 publishMavenStyle := true
@@ -44,7 +42,7 @@ publishTo := Some(
 
 enablePlugins(SiteScaladocPlugin)
 enablePlugins(GhpagesPlugin)
-git.remoteRepo := "git@github.com:org.sangria-graphql-org/sangria-play-json.git"
+git.remoteRepo := "git@github.com:org.sangria-graphql-org/sangria-json4s-jackson.git"
 
 // nice *magenta* prompt!
 
