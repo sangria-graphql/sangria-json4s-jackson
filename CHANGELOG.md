@@ -1,3 +1,8 @@
+## v1.0.1 (2019-10-28)
+
+* scala 2.13 build (#1) @pjfanning
+* automate release notes (#11) @yanns
+
 ## v1.0.0 (2017-01-16)
 
 * 1.0 Release
