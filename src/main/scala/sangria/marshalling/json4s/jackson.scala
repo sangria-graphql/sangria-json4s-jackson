@@ -1,6 +1,6 @@
 package sangria.marshalling.json4s
 
-import org.json4s.jackson.JsonMethods.{render ⇒ jsonRender, pretty, compact, parse ⇒ parseJson}
+import org.json4s.jackson.JsonMethods.{render => jsonRender, pretty, compact, parse => parseJson}
 import org.json4s.JsonAST._
 import sangria.marshalling._
 
@@ -19,20 +19,20 @@ object jackson extends Json4sJacksonSupportLowPrioImplicits {
 
     def arrayNode(values: Vector[JValue]) = JArray(values.toList)
     def optionalArrayNodeValue(value: Option[JValue]) = value match {
-      case Some(v) ⇒ v
-      case None ⇒ nullNode
+      case Some(v) => v
+      case None => nullNode
     }
 
     def scalarNode(value: Any, typeName: String, info: Set[ScalarValueInfo]) = value match {
-      case v: String ⇒ JString(v)
-      case v: Boolean ⇒ JBool(v)
-      case v: Int ⇒ JInt(v)
-      case v: Long ⇒ JLong(v)
-      case v: Float ⇒ JDouble(v)
-      case v: Double ⇒ JDouble(v)
-      case v: BigInt ⇒ JInt(v)
-      case v: BigDecimal ⇒ JDecimal(v)
-      case v ⇒ throw new IllegalArgumentException("Unsupported scalar value: " + v)
+      case v: String => JString(v)
+      case v: Boolean => JBool(v)
+      case v: Int => JInt(v)
+      case v: Long => JLong(v)
+      case v: Float => JDouble(v)
+      case v: Double => JDouble(v)
+      case v: BigInt => JInt(v)
+      case v: BigDecimal => JDecimal(v)
+      case v => throw new IllegalArgumentException("Unsupported scalar value: " + v)
     }
 
     def enumNode(value: String, typeName: String) = JString(value)
@@ -59,13 +59,13 @@ object jackson extends Json4sJacksonSupportLowPrioImplicits {
 
     def isDefined(node: JValue) = node != JNull && node != JNothing
     def getScalarValue(node: JValue) = node match {
-      case JBool(b) ⇒ b
-      case JInt(i) ⇒ i
-      case JDouble(d) ⇒ d
-      case JLong(l) ⇒ l
-      case JDecimal(d) ⇒ d
-      case JString(s) ⇒ s
-      case _ ⇒ throw new IllegalStateException(s"$node is not a scalar value")
+      case JBool(b) => b
+      case JInt(i) => i
+      case JDouble(d) => d
+      case JLong(l) => l
+      case JDecimal(d) => d
+      case JString(s) => s
+      case _ => throw new IllegalStateException(s"$node is not a scalar value")
     }
 
     def getScalaScalarValue(node: JValue) = getScalarValue(node)
@@ -73,8 +73,8 @@ object jackson extends Json4sJacksonSupportLowPrioImplicits {
     def isEnumNode(node: JValue) = node.isInstanceOf[JString]
 
     def isScalarNode(node: JValue) = node match {
-      case _: JBool | _: JNumber | _: JString ⇒ true
-      case _ ⇒ false
+      case _: JBool | _: JNumber | _: JString => true
+      case _ => false
     }
 
     def isVariableNode(node: JValue) = false
