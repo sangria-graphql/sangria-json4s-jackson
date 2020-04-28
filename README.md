@@ -1,6 +1,6 @@
 [Sangria](http://sangria-graphql.org/) [json4s-jackson](http://json4s.org) marshalling.
 
-[![Build Status](https://travis-ci.org/sangria-graphql-org/sangria-json4s-jackson.svg?branch=master)](https://travis-ci.org/sangria-graphql-org/sangria-json4s-jackson)
+[![Build Status](https://travis-ci.org/sangria-graphql/sangria-json4s-jackson.svg?branch=master)](https://travis-ci.org/sangria-graphql/sangria-json4s-jackson)
 [![Coverage Status](http://coveralls.io/repos/sangria-graphql/sangria-json4s-jackson/badge.svg?branch=master&service=github)](http://coveralls.io/github/sangria-graphql/sangria-json4s-jackson?branch=master)
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/org.sangria-graphql/sangria-json4s-jackson_2.11/badge.svg)](https://maven-badges.herokuapp.com/maven-central/org.sangria-graphql/sangria-json4s-jackson_2.11)
 [![License](http://img.shields.io/:license-Apache%202-brightgreen.svg)](http://www.apache.org/licenses/LICENSE-2.0.txt)
