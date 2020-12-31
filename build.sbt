@@ -25,7 +25,7 @@ javacOptions ++= {
 }
 
 libraryDependencies ++= Seq(
-  "org.sangria-graphql" %% "sangria-marshalling-api" % "1.0.4",
+  "org.sangria-graphql" %% "sangria-marshalling-api" % "1.0.5",
   "org.json4s" %% "json4s-jackson" % "3.6.10",
 
   "org.sangria-graphql" %% "sangria-marshalling-testkit" % "1.0.3" % Test,
