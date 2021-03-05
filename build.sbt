@@ -6,9 +6,6 @@ description := "Sangria json4s-jackson marshalling"
 homepage := Some(url("http://sangria-graphql.org"))
 licenses := Seq("Apache License, ASL Version 2.0" -> url("http://www.apache.org/licenses/LICENSE-2.0"))
 
-scalaVersion := "2.13.5"
-crossScalaVersions := Seq("2.12.12", scalaVersion.value)
-
 ThisBuild / crossScalaVersions := Seq("2.12.12", "2.13.5")
 ThisBuild / scalaVersion := crossScalaVersions.value.last
 ThisBuild / githubWorkflowPublishTargetBranches := List()
