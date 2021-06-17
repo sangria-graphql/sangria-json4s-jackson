@@ -1,6 +1,6 @@
 name := "sangria-json4s-jackson"
 organization := "org.sangria-graphql"
-mimaPreviousArtifacts := Set("org.sangria-graphql" %% "sangria-json4s-jackson" % "1.0.1")
+mimaPreviousArtifacts := Set.empty
 
 description := "Sangria json4s-jackson marshalling"
 homepage := Some(url("https://sangria-graphql.github.io/"))
@@ -22,7 +22,7 @@ javacOptions ++= Seq("-source", "8", "-target", "8")
 
 libraryDependencies ++= Seq(
   "org.sangria-graphql" %% "sangria-marshalling-api" % "1.0.6",
-  "org.json4s" %% "json4s-jackson" % "3.6.11",
+  "org.json4s" %% "json4s-jackson" % "4.0.0",
   "org.sangria-graphql" %% "sangria-marshalling-testkit" % "1.0.4" % Test,
   "org.scalatest" %% "scalatest" % "3.2.9" % Test
 )
