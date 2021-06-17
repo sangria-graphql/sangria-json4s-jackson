@@ -1,7 +1,7 @@
 package sangria.marshalling.json4s
 
 import org.json4s.jackson.JsonMethods.{render => jsonRender, pretty, compact, parse => parseJson}
-import org.json4s.JsonAST._
+import org.json4s._
 import sangria.marshalling._
 
 import scala.util.Try
