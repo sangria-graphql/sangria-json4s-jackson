@@ -113,7 +113,7 @@ object jackson extends Json4sJacksonSupportLowPrioImplicits {
 
   implicit object Json4sJacksonInputParser extends InputParser[JValue] {
     def parse(str: String): Try[JValue] =
-      Try(parseJson(str, useBigDecimalForDouble = true, useBigIntForLong = false))
+      Try(parseJson(str, useBigDecimalForDouble = false, useBigIntForLong = false))
   }
 }
 
