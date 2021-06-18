@@ -57,7 +57,7 @@ object jackson extends Json4sJacksonSupportLowPrioImplicits {
     def isMapNode(node: JValue): Boolean = node.isInstanceOf[JObject]
     def getMapValue(node: JValue, key: String): Option[JValue] =
       node.asInstanceOf[JObject].obj.find(_._1 == key).map(_._2)
-    def getMapKeys(node: JValue): List[String] = node.asInstanceOf[JObject].obj.map(_._1)
+    def getMapKeys(node: JValue) = node.asInstanceOf[JObject].obj.map(_._1)
 
     def isListNode(node: JValue): Boolean = node.isInstanceOf[JArray]
     def getListValue(node: JValue): List[JValue] = node.asInstanceOf[JArray].arr
