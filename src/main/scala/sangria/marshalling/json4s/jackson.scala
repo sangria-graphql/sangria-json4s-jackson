@@ -12,7 +12,11 @@ object jackson extends Json4sJacksonSupportLowPrioImplicits {
     type MapBuilder = ArrayMapBuilder[Node]
 
     def emptyMapNode(keys: Seq[String]): MapBuilder = new ArrayMapBuilder[Node](keys)
-    def addMapNodeElem(builder: MapBuilder, key: String, value: Node, optional: Boolean): MapBuilder =
+    def addMapNodeElem(
+        builder: MapBuilder,
+        key: String,
+        value: Node,
+        optional: Boolean): MapBuilder =
       builder.add(key, value)
 
     def mapNode(builder: MapBuilder): JObject = JObject(builder.toList)
@@ -62,7 +66,7 @@ object jackson extends Json4sJacksonSupportLowPrioImplicits {
     def isListNode(node: JValue): Boolean = node.isInstanceOf[JArray]
     def getListValue(node: JValue): List[JValue] = node.asInstanceOf[JArray].arr
 
-    def isDefined(node: JValue):Boolean = node != JNull && node != JNothing
+    def isDefined(node: JValue): Boolean = node != JNull && node != JNothing
     def getScalarValue(node: JValue): Any =
       node match {
         case JBool(b) => b
@@ -92,7 +96,8 @@ object jackson extends Json4sJacksonSupportLowPrioImplicits {
   }
 
   private object Json4sJacksonToInput extends ToInput[JValue, JValue] {
-    def toInput(value: JValue): (JValue, Json4sJacksonInputUnmarshaller.type) = (value, Json4sJacksonInputUnmarshaller)
+    def toInput(value: JValue): (JValue, Json4sJacksonInputUnmarshaller.type) =
+      (value, Json4sJacksonInputUnmarshaller)
   }
 
   implicit def json4sJacksonToInput[T <: JValue]: ToInput[T, JValue] =
